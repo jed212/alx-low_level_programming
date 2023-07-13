@@ -1,9 +1,11 @@
 #include<stdio.h>
 
 /**
- * Main prints "Programming is like building a multilingual puzzle
+ * main - uses puts to print  "Programming is like building a multilingual puzzle
  *
- * Return 0
+ * The program returns 0 to indicate successful execution
+ *
+ * Return: Always 0(Success)
  */
 int main(void)
 {
