@@ -1,7 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdio.h>
 /**
  * File: main.h
  * Desc: Contains header files for the 0x04-more_functions_nested_loops project
