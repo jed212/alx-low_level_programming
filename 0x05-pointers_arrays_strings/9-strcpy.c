@@ -7,6 +7,8 @@
  * to the buffer pointed to by dest
  * @src: The source
  * @dest: The destination
+ *
+ * Return: Returns poiter to dest
  */
 char *_strcpy(char *dest, char *src)
 {
