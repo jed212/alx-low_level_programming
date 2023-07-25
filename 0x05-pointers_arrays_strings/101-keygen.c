@@ -13,7 +13,9 @@
  */
 char generate_random_char(void)
 {
-	const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+	const char charset[] = "abcdefghijklmnopqrstuvwxyz"
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+		"0123456789";
 	int index = rand() % (sizeof(charset) - 1);
 
 	return (charset[index]);
@@ -24,10 +26,11 @@ int main(void)
 	srand(time(NULL));
 
 	char password[PASSWORD_LENGTH + 1];
+	int i;
 
-	for (int i = 0; i < PASSWORD_LENGTH; i++)
+	for (i = 0; i < PASSWORD_LENGTH; i++)
 	{
-		password[i] = generate_random_char(void);
+		password[i] = generate_random_char();
 	}
 	password[PASSWORD_LENGTH] = '\0';
 	printf("%s", password);
