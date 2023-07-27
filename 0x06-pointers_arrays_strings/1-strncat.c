@@ -20,8 +20,9 @@ int _strlen(char *s)
  * _strncat - concatenates n characters of string src to the end of dest
  * @dest: the initial string
  * @src: the strig to be concatenated to dest
+ * @n: the number of characters to be concatenated
  *
- * Return: Returns the pointer to the initial string 
+ * Return: Returns the pointer to the initial string
  */
 char *_strncat(char *dest, char *src, int n)
 {
