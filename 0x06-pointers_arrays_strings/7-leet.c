@@ -1,29 +1,27 @@
 #include "main.h"
 
 /**
- * leet - Converts a/A, e/E, o/O, t/T and l/L by 4, 3, 0, 7 and 1 respectively.
- * @s: pointer to string
+ * leet - a function that encodes a string into 1337.
+ * @str: The input string.
  *
- * Return: returns pointer to the string
+ * Return: returns a pointer to the resulting string.
  */
-char *leet(char *s)
+char *leet(char *str)
 {
-	int i;
+	char *leetspeak = "aAeEoOtTlL";
+	char *replacement = "4433007711";
+	int i, j;
 
-	i = 0;
-	while (*(s + i) != '\0')
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (*(s + i) == 65 || *(s + i) == 97)
-			*(s + i) = 52;
-		else if (*(s + i) ==  69 || *(s + i) == 101)
-			*(s + i) = 51;
-		else if (*(s + i) == 79 || *(s + i) == 111)
-			*(s + i) = 48;
-		else if (*(s + i) == 84 || *(s + i) == 116)
-			*(s + i) = 55;
-		else if (*(s + i) == 76 || *(s + i) == 108)
-			*(s + i) = 49;
-		i++;
+		for (j = 0; leetspeak[j] != '\0'; j++)
+		{
+			if (str[i] == leetspeak[j])
+			{
+				str[i] = replacement[j];
+				break;
+			}
+		}
 	}
-	return (s);
+	return (str);
 }
