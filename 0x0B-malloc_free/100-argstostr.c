@@ -13,37 +13,40 @@
 char *argstostr(int ac, char **av)
 {
 	char *concat;
-	int total_len = 0;
-	int arg_len = 0;
-	int curr_pos = 0;
+	int size, count1, count2 = 0;
 	int i;
 
 	if (ac == 0 || av == NULL)
-		return (NULL);
-
-	for (i = 0; i < ac; i++)
 	{
-		while (av[i][arg_len] != '\0')
-			arg_len++;
-		total_len += arg_len + 1;
+		return (NULL);
 	}
 
-	concat = (char *)malloc((total_len + 1) * sizeof(char));
-
-	if (concat == NULL)
-		return (NULL);
-
 	for (i = 0; i < ac; i++)
 	{
-		while (av[i][arg_len] != '\0')
+		for (count1 = 0; av[i][count1] != '\0'; count1++)
 		{
-			concat[curr_pos] = av[i][arg_len];
-			arg_len++;
-			curr_pos++;
+			size += 1;
 		}
-		concat[curr_pos] = '\n';
-		curr_pos++;
+		size += 1;
 	}
-	concat[curr_pos] = '\0';
+	size += 1;
+
+	concat = malloc(sizeof(char) * size);
+	if (concat == NULL)
+	{
+		free(concat);
+		return (NULL);
+	}
+	for (i = 0; i < ac; i++)
+	{
+		for (count1 = 0; av[i][count1] != '\0'; count1++)
+		{
+			concat[count2] = av[i][count1];
+			count2++;
+		}
+		concat[count2] = '\n';
+		count2++;
+	}
+	concat[count2] = '\0';
 	return (concat);
 }
