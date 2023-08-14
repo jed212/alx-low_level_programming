@@ -7,7 +7,7 @@
  * @age: Age of the dog
  * @owner: Owner of the dog
  *
- * Description: Contains the elements of a dog
+ * Description: Contains the metadata of a dog with the type of dog's struct
  */
 typedef struct dog
 {
@@ -15,5 +15,6 @@ typedef struct dog
 	float age;
 	char *owner;
 };
+/* more function prototypes */
 void init_dog(struct dog *d, char *name, float age, char *owner);
 #endif
