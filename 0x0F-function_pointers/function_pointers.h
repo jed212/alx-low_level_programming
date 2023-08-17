@@ -1,9 +1,7 @@
 #ifndef FUNCTION_POINTERS_H
 #define FUNCTION_POINTERS_H
-
-/**
- * File: function_pointers.h
- * Desc: contains prototypes for the 0x0F-function_pointers project
- */
+#include <stddef.h>
+int _putchar(char c);
 void print_name(char *name, void (*f)(char *));
+
 #endif
