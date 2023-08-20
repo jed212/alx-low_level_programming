@@ -8,43 +8,41 @@
   */
 void print_all(const char * const format, ...)
 {
-	va_list a;
-	int j;
-	char t;
-	char *s;
+	va_list l;
+	int i = 0;
+	char *k;
+	char *s = ", ";
 
-	va_start(a, format);
-	j = 0;
-	while (*(format + j) != '\0')
+	va_start(l, format);
+
+	while ((format != NULL) && *(format + i) != '\0')
 	{
-		t = *(format + j);
-		if (t == 'c')
-			printf("%c", va_arg(a, int));
-		else if (t == 'i')
-			printf("%d", va_arg(a, int));
-		else if (t == 'f')
-			printf("%f", va_arg(a, double));
-		else if (t == 's')
+		switch (*(format + i))
 		{
-			s = va_arg(a, char *);
-			if (s != NULL)
-				printf("%s", s);
-			else
-				printf("(nil)");
-
+			case 's':
+				k = va_arg(l, char *);
+				k = (k != NULL) ? k : "(nil)";
+				printf("%s", k);
+				break;
+			case 'i':
+				printf("%i", va_arg(l, int));
+				break;
+			case 'c':
+				printf("%c", va_arg(l, int));
+				break;
+			case 'f':
+				printf("%f", va_arg(l, double));
+				break;
+			default:
+				i++;
+				continue;
 		}
-		else
+		if (*(format + i + 1) != 0)
 		{
-			j++;
-			continue;
+			printf("%s", s);
 		}
-		j++;
-		while (*(format + j) != '\0')
-		{
-			printf(", ");
-			break;
-		}
+		i++;
 	}
-	printf("\n");
-	va_end(a);
+	putchar(10);
+	va_end(l);
 }
