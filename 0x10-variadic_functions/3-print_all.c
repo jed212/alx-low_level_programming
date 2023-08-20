@@ -9,10 +9,9 @@
 void print_all(const char * const format, ...)
 {
 	va_list a;
-
-	char t;
 	int j;
-	char *c;
+	char t;
+	char *s;
 
 	va_start(a, format);
 	j = 0;
@@ -27,9 +26,9 @@ void print_all(const char * const format, ...)
 			printf("%f", va_arg(a, double));
 		else if (t == 's')
 		{
-			c = va_arg(a, char *);
-			if (c != NULL)
-				printf("%s", c);
+			s = va_arg(a, char *);
+			if (s != NULL)
+				printf("%s", s);
 			else
 				printf("(nil)");
 
