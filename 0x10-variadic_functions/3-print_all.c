@@ -20,17 +20,11 @@ void print_all(const char * const format, ...)
 	{
 		t = *(format + j);
 		if (t == 'c')
-		{
 			printf("%c", va_arg(a, int));
-		}
 		else if (t == 'i')
-		{
 			printf("%d", va_arg(a, int));
-		}
 		else if (t == 'f')
-		{
 			printf("%f", va_arg(a, double));
-		}
 		else if (t == 's')
 		{
 			c = va_arg(a, char *);
