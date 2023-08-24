@@ -1,5 +1,7 @@
 #include "lists.h"
 #include <stdio.h>
+#include <stddef.h>
+#include <stdlib.h>
 
 /**
  * print_list - function that prints the elements of a linked list
@@ -7,6 +9,7 @@
  *
  * Return: returns the number of printed nodes
  */
+
 size_t print_list(const list_t *h)
 {
 	size_t t = 0;
