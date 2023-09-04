@@ -34,7 +34,7 @@ void close_error(int fd)
  */
 int main(int ac, char *av[])
 {
-	char *buff[BUFFSIZE];
+	char *buf[BUFSIZE];
 	int fd_to, fd_from, bytes_check, n;
 
 	if (ac != 3)
